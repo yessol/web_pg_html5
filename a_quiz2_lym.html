@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>&gt; A조 퀴즈 1 &lt;</title>
+    <meta charset=utf8 />
+    <script src="https://code.jquery.com/jquery-1.7.0.js"></script>
+    <style>
+      .btn {
+        border-radius: 999px;
+        padding: 5px;
+        background-image: linear-gradient(rgb(112, 164, 222), rgb(217, 231, 247));
+        position: relative;
+        width: 35px;
+        font-family: '굴림';
+        font-size: 12pt;
+        font-weight: 700;
+        margin: 5px;
+      }
+      .btn:before {
+        content: '';
+        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .2));
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        border-bottom-left-radius: 999px 1888px;
+        border-bottom-right-radius: 999px 1888px;
+        position: absolute;
+        left: 10%;
+        top: 1px;
+        width: 80%;
+        height: 50%;
+      }
+
+      .form-group {
+        border-radius: 10px;
+        padding: 6px 8px 6px 8px;
+        border: 1px dashed gray;
+      }
+
+      .frm {
+        display: inline-block;
+        border-radius: 10px;
+        border: 1px solid gray;
+        border-width: 0 1px 0 1px;
+      }
+    </style>
+
+    <script>
+      $(function() {
+        var run = 0;
+        $('#btnCorrect').on('mousemove', function() {
+          if(run) return;
+          run = 1;
+          $('#btnWrong').after($(this).clone());
+          $('#btnWrong').css('margin', '5px 11px 5px 5px');
+          $(this).remove();
+        });
+      });
+    </script>
+  </head>
+
+  <body bgcolor=aliceblue>
+    <h1>A조 퀴즈</h1>
+    <div class=form-group>
+      <h2>문제 2</h2>
+      <p>갤럭시 노트 8<strong><u>.0</u></strong>은 가로 길이가 8인치인 2013년에 나온 태블릿이다.</p>
+      <form class=frm>
+        <button id=btnCorrect class=btn formaction="https://yessol.github.io/web_pg_html5/A_quiz3_ajw.html">○</button>
+        <button id=btnWrong class=btn formaction="https://yessol.github.io/web_pg_html5/replay.html">×</button>
+      </form>
+    </div>
+  </body>
+</html>
