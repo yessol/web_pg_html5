@@ -1,72 +1,219 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>&gt; A조 퀴즈 1 &lt;</title>
-    <meta charset=utf8 />
-    <script src="https://code.jquery.com/jquery-1.7.0.js"></script>
-    <style>
-      .btn {
-        border-radius: 999px;
-        padding: 5px;
-        background-image: linear-gradient(rgb(112, 164, 222), rgb(217, 231, 247));
-        position: relative;
-        width: 35px;
-        font-family: '굴림';
-        font-size: 12pt;
-        font-weight: 700;
-        margin: 5px;
-      }
-      .btn:before {
-        content: '';
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .2));
-        border-top-left-radius: 9999px;
-        border-top-right-radius: 9999px;
-        border-bottom-left-radius: 999px 1888px;
-        border-bottom-right-radius: 999px 1888px;
-        position: absolute;
-        left: 10%;
-        top: 1px;
-        width: 80%;
-        height: 50%;
-      }
+    <head>
+        <title>* A조 퀴즈 - 문제 2 *</title>
+        <meta charset=utf8 />
+        <script src="https://code.jquery.com/jquery-1.7.0.js"></script>
+        <style>
+			.btn {
+				border-radius: 999px;
+				padding: 5px;
+				background-image: linear-gradient(rgb(112, 164, 222), rgb(217, 231, 247));
+				position: relative;
+				width: 35px;
+				font-family: '굴림';
+				font-size: 12pt;
+				font-weight: 700;
+				margin: 5px;
+				transition: all ease .2s;
+				border: 2px outset rgb(192, 192, 192);
+			}
+			.btn:before {
+				content: '';
+				background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .2));
+				border-top-left-radius: 9999px;
+				border-top-right-radius: 9999px;
+				border-bottom-left-radius: 999px 1888px;
+				border-bottom-right-radius: 999px 1888px;
+				position: absolute;
+				left: 10%;
+				top: 1px;
+				width: 80%;
+				height: 50%;
+			}
+			.btn[disabled] {
+				background-image: linear-gradient(rgb(176, 176, 176), rgb(225, 225, 225));
+				color: gray;
+			}
+			.btn:not([disabled]):active {
+				border: 2px inset rgb(192, 192, 192);
+			}
+			.btn:not([disabled]):hover {
+				box-shadow: 0 0 10px #69b9fe
+			}
 
-      .form-group {
-        border-radius: 10px;
-        padding: 6px 8px 6px 8px;
-        border: 1px dashed gray;
-      }
+            .form-group {
+                border-radius: 10px;
+                padding: 6px 8px 6px 8px;
+                border: 1px dashed gray;
+				margin-bottom: 40px;
+            }
 
-      .frm {
-        display: inline-block;
-        border-radius: 10px;
-        border: 1px solid gray;
-        border-width: 0 1px 0 1px;
-      }
-    </style>
+            .frm {
+                display: inline-block;
+                border-radius: 10px;
+                border: 1px solid gray;
+                border-width: 0 1px 0 1px;
+            }
+			
+			td {
+				text-align: center;
+			}
+        </style>
 
-    <script>
-      $(function() {
-        var run = 0;
-        $('#btnCorrect').on('mousemove', function() {
-          if(run) return;
-          run = 1;
-          $('#btnWrong').after($(this).clone());
-          $('#btnWrong').css('margin', '5px 11px 5px 5px');
-          $(this).remove();
-        });
-      });
-    </script>
-  </head>
+        <script>
+            $(function() {
+                var run = 0;
+				var pos = 0;
+				var colset;
+				
+				$('.frm').contents().filter(function() {
+					return this.nodeType === 3;
+				}).remove();
+				
+                $('#btnCorrect').on('mousemove', function() {
+                    if(run) return;
+                    run = 1;
+                    $('#btnWrong').after($(this).clone());
+					
+                    $(this).remove();
+                });
+				
+				$('#btnEgg').click(function() {
+					switch(Math.floor(Math.random() * 10)) {
+						case 1:
+						case 2:
+						case 3:
+						case 4:
+							$('body').css('transform', 'rotate(180deg)');
+							
+							return $(this).attr('disabled', '');
+						case 5:
+						case 6:
+						case 7:
+							$('#btnCorrect')[0].outerHTML += '';
+							$('#btnWrong')[0].outerHTML += '';
+							
+							$('#btnCorrect').on('mousemove', function() {
+								if(pos) $('#btnWrong').before($(this));
+								else $('#btnWrong').after($(this));
+								pos = !pos;
+							});
+							
+							setTimeout(function() {
+								$('#btnRetry').show();
+								location.href = 'https://yessol.github.io/web_pg_html5/';
+							}, 3000);
+							
+							return $(this).attr('disabled', '');
+						case 8:
+						case 9:
+						case 0:
+							$('#btnCorrect, #btnWrong').attr('disabled', '');
+						
+							setTimeout(function() {
+								$('#btnRetry').show();
+								location.href = 'https://yessol.github.io/web_pg_html5/';
+							}, 3000);
+							
+							return $(this).attr('disabled', '');
+					}
+				});
+				
+				$('#bgcolorInput').on('input keyup mouseup change', colset = function() {
+					switch(Number($('#bgcolorInput').val())) {
+						case 1:
+							return $('body').attr('bgcolor', 'aliceblue');
+						case 2:
+							return $('body').attr('bgcolor', 'pink');
+						case 3:
+							return $('body').attr('bgcolor', 'skyblue');
+						case 4:
+							return $('body').attr('bgcolor', 'whitesmoke');
+						case 5:
+							return $('body').attr('bgcolor', 'lemonchiffon');
+						case 6:
+							return $('body').attr('bgcolor', 'aquamarine');
+						case 7:
+							return $('body').attr('bgcolor', 'lightgreen');
+						case 8:
+							return $('body').attr('bgcolor', 'wheat');
+					}
+				});
+				
+				$('#btnPrev').click(function() {
+					$('#bgcolorInput')[0].value--;
+					colset();
+				});
+				
+				$('#btnNext').click(function() {
+					$('#bgcolorInput')[0].value++;
+					colset();
+				});
+            });
+        </script>
+    </head>
 
-  <body bgcolor=aliceblue>
-    <h1>A조 퀴즈</h1>
-    <div class=form-group>
-      <h2>문제 2</h2>
-      <p>갤럭시 노트 8<strong><u>.0</u></strong>은 가로 길이가 8인치인 2013년에 나온 태블릿이다.</p>
-      <form class=frm>
-        <button id=btnCorrect class=btn formaction="https://yessol.github.io/web_pg_html5/a_quiz3_ajw.html">○</button>
-        <button id=btnWrong class=btn formaction="https://yessol.github.io/web_pg_html5/replay.html">×</button>
-      </form>
-    </div>
-  </body>
+    <body bgcolor=aliceblue>
+        <h1>A조 퀴즈</h1>
+        <div class=form-group>
+            <h2>문제 2</h2>
+            <p>갤럭시 노트 8<strong><u>.0</u></strong>은 가로 길이가 8인치인 2013년에 나온 태블릿이다.</p>
+            
+			
+			<form class=frm>
+                <button id=btnCorrect class=btn formaction="https://yessol.github.io/web_pg_html5/a_quiz3_ajw.html">○</button>
+                <button id=btnWrong class=btn formaction="https://yessol.github.io/web_pg_html5/replay.html">×</button>
+				<button id=btnEgg class=btn type=button>?</button>
+            </form>
+			
+			<form style="display: inline-block;">
+				<button id=btnRetry style="display: none;">다시 하기</button>
+			</form>
+        </div>
+		
+		<table>
+			<colgroup>
+				<col />
+				
+				<col />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col style="width: 60px;" />
+				<col />
+			</colgroup>
+			
+			<tbody>
+				<tr>
+					<td rowspan=2><label>배경색: </label></td>
+					
+					<td><button class=btn id=btnPrev>&lt;</button></td>
+					
+					<td colspan=8>
+						<input type=range value=1 max=8 min=1 id=bgcolorInput style="width: 100%; margin: 0;" />
+					</td>
+					
+					<td><button class=btn id=btnNext>&gt;</button></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td>앨리스</td>
+					<td>분홍</td>
+					<td>하늘</td>
+					<td>연기</td>
+					<td>바나나</td>
+					<td>아쿠아</td>
+					<td>연두</td>
+					<td>밀</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+    </body>
 </html>
