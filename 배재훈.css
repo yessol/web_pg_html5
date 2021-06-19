@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap');
+
+body{
+  font-family: 'Jua', sans-serif;
+  text-align: center;
+  background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDA0MThfMjk1/MDAxNTg3MTc5NDExMDk0.kvRX9GRpNX6rAolBb4S09JhtjkAhHSsE65KC75rJbIcg.rDCc24myHhgjmdJQy89iD7z76Cl7Dv5bEgVBtgcfZtAg.JPEG.youli9988/19D407D1-3370-4932-80A6-2C184DC3E5AC.jpeg?type=w800");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+header{
+  font-size: 30px;
+}
+section{
+  font-size: 40px;
+  margin: 35%;
+}
+a{
+  text-decoration: none;
+  color: rgb(1, 180, 30);
+}

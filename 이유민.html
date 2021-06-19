@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title></title>
+
+    <style>
+      .dance {
+        color: white;
+      }
+
+      div.content#first {
+        filter: hue-rotate(371deg) saturate(400%);
+      }
+
+      div.content#second {
+        filter: hue-rotate(337deg) saturate(400%)
+      }
+
+      div.layout {
+        overflow-y: scroll;
+        height: 100%;
+        height: 100vh;
+      }
+
+      body {
+        text-align: center;
+        height: 100vh;
+        margin: 0;
+        font-family: '돋움';
+        overflow: hidden;
+        background-attachment: fixed;
+        background: radial-gradient(circle at 70% 88%, #ffffff38 10px, #ffffff54 51%, transparent 50%), linear-gradient(#9cd6ff, #e1f3ff);
+      }
+
+      h1 {
+        margin: 20px;
+        border: 1px solid black;
+        width: 60%;
+        display: inline-block;
+        padding: 8px;
+        border-radius: 20px;
+        background: linear-gradient(#85c5f3, #cbe9ff);
+        box-shadow: 0px 0px 30px aliceblue;
+      }
+
+      h3.t {
+        border-width: 1px 1px 0 1px;
+        border-style: dashed;
+        border-color: black;
+        display: inline-block;
+        padding: 8px 52px 8px 52px;
+        margin-bottom: 0;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(#b0d9f1, #e4f5ff);
+      }
+
+      div.content {
+        display: table;
+        width: 70%;
+        margin: auto;
+        padding: 22px;
+        border-radius: 50px;
+        background: linear-gradient(#687077, #91999e);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid black;
+        opacity: .8;
+      }
+      div.content::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 196px;
+        background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .2));
+        border-radius: 10000% / 5000%;
+        top: -121px;
+        left: 0%;
+        z-index: -999;
+      }
+
+      div.content span.text xmp, div.content span.text pre {
+        z-index: 999;
+        overflow-y: auto;
+        max-height: 200px;
+        margin: 0;
+      }
+
+      div.content span.text pre span.d {
+        font-weight: 700;
+        text-shadow: 0 0 3px whitesmoke;
+        color: #222;
+      }
+
+      div.circlebg {
+        position: absolute;
+        margin: 0;
+        width: 150px;
+        height: 150px;
+        border-radius: 999px;
+        background: linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .2));
+        top: 25%;
+        left: 71%;
+        z-index: -999;
+        position: absolute;
+      }
+
+      div.circlebg::before {
+        border-radius: 999px;
+        content: '';
+        position: absolute;
+        background: radial-gradient(circle at 50% 50%, white, transparent 66%);
+        width: 77px;
+        height: 77px;
+        left: 23px;
+        top: 14px;
+      }
+
+      a {
+        color: navy;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class=layout>
+      <div class=circlebg style="top: calc(100vh - 125px); left: calc(100vw - 306px);"></div>
+      <div class=circlebg style="top: calc(100vh - 200px); left: calc(100vw - 105px);"></div>
+      <div class=circlebg style="top: calc(100vh - 274px); left: 49px;"></div>
+      <div></div>
+      <header>
+        <h1>잠 못 드는 밤 비는 내리고 <small>(김건모) <a onclick="window.open('https://www.youtube.com/embed/we9W7hAA47M?controls=0&autoplay=1', 'Popup', 'location=no,status=no,scrollbars=no,resizable=no,width=320, height=240'); return false;" href="https://www.youtube.com/embed/we9W7hAA47M?controls=0&autoplay=1" target=_blank>[재생]</a></small> </h1>
+      </header>
+
+      <section>
+        <h3 class=t>1절</h3>
+        <div id=first class=content>
+          <span class=text>
+            <xmp>
+  슬픈 노래는 듣고 싶지 않아 내 맘 속에 잠들어 있는
+  네가 다시 나를 찾아와 나는 긴 긴 밤을 잠 못들 것 같아
+  창 밖에 비가 내리면 우두커니 창가에 기대어 앉아
+  기타를 튕기며 노래를 불렀지 네가 즐겨 듣던 그 노래
+
+  창 밖을 보면 비는 오는데 괜시리 마음만 울적해
+  울적한 마음을 달랠 수가 없네 잠도 오지 않는 밤에
+
+  이젠 나의 희미한 기억속에 너는 점점 더 멀어져 가고
+  너의 슬픈 미소만이 나의 마음속에 가득 남아 흐르고 있어
+  이렇게 비가 오는 밤이면 너는 나를 더욱 슬퍼지게 해
+  언제나 즐겨듣던 그 노래가 내 귓가에 아직 남아 있는데
+
+  이렇게 비가 오는 밤이면 내 지친 그리움으로 널 만나고
+  이 비가 그치고 나면 난 너를 찾아 떠나갈거야
+            </xmp>
+          </span>
+        </div>
+
+        <h3 class=t>2절</h3>
+        <div id=second class=content>
+          <span class=text>
+            <pre>
+  슬픈 노래는 듣고 싶지 않아 내 맘 속에 잠 들어 있는
+  네가 다시 나를 찾아와 나는 긴 긴 밤을 잠 못들 것 같아
+  창 밖에 비가 내리면 우두커니 창가에 기대어 앉아
+  기타를 튕기며 노래를 불렀지 네가 즐겨 듣던 그 노래
+
+  <span class=d>두 눈을 감고 잠을 청해도 비 오는 소리만 처량해
+  비 오는 소리에 내 마음 젖었네</span> 잠도 오지 않는 밤에
+
+  이젠 나의 희미한 기억속에 너는 점점 더 멀어져 가고
+  너의 슬픈 미소만이 나의 마음속에 가득 남아 흐르고 있어
+  이렇게 비가 오는 밤이면 너는 나를 더욱 슬퍼지게 해
+  언제나 즐겨 듣던 그 노래가 내 귓가에 아직 남아 있는데
+
+  이렇게 비가 오는 밤이면 내 지친 그리움으로 널 만나고
+  이 비가 그치고 나면 난 너를 찾아 떠나갈거야
+
+  이렇게 비가 오는 밤이면 내 지친 그리움으로 널 만나고
+  이 비가 그치고 나면 난 너를 찾아 떠나갈거야
+            </pre>
+          </span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

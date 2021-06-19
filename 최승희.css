@@ -1,0 +1,33 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+header{
+  display: flex;
+  justify-content: space-between;
+
+  text-align: center;
+  color:rgb(16, 252, 250);
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+section{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30%;
+  font-family: 'Black Han Sans', sans-serif;
+}
+body{
+
+color: rgb(255, 255, 255);
+  background-size: no-repeat;
+  background-position: center;
+font-family: 'Black Han Sans', sans-serif;
+
+}
+style{
+  display: flex;
+  justify-content: space-between;
+text-align: center;
+
+  font-family: 'Black Han Sans', sans-serif;
+}

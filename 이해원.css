@@ -1,0 +1,17 @@
+import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+header {
+  font-size : 35px;
+  text-align : left;
+}
+body {
+  margin : 10%;
+  padding : 10%;
+  color : rgb(218, 239, 255);
+  font-size : 30px;
+  text-align : left;
+  background-image : url("https://images.freeimages.com/images/large-previews/c3b/dark-sea-1397945.jpg");
+  background-size : cover;
+
+  background-repeat: repeat;
+  font-family : 'Nanum Pen Script', cursive;
+}
